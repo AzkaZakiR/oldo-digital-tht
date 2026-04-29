@@ -6,6 +6,7 @@ import (
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/database"
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/handler"
 	models "github.com/AzkaZakiR/oldo-digital-tht/internal/models"
+	dto "github.com/AzkaZakiR/oldo-digital-tht/internal/pkg"
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/repository"
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/service"
 	"github.com/gofiber/fiber/v3"
@@ -34,7 +35,15 @@ func main(){
 	transactionSvc := service.NewTransactionService(transactionRepo, dataPlanRepo, userRepo)
 	transactionHandler := handler.NewTransactionHandler(transactionSvc)
 
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		ErrorHandler: func(c fiber.Ctx, err error) error {
+        code := fiber.StatusInternalServerError
+        if e, ok := err.(*fiber.Error); ok {
+            code = e.Code
+        }
+        return dto.Error(c, code, "An unexpected error occurred", err.Error())
+    },
+	})
 
 	userApi := app.Group("/api/users")
 	dataPlanApi := app.Group("/api/dataplan")

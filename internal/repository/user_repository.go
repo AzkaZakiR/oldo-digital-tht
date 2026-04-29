@@ -46,6 +46,16 @@ func (r *userRepository) Update(id int, user *models.User) error {
 		Where("id = ?", id).Updates(user).Error
 }
 
-func (r *userRepository) Delete(id int) error{
-	return r.db.Delete(&models.User{}, id).Error
+func (r *userRepository) Delete(id int) error {
+	result := r.db.Delete(&models.User{}, id)
+
+	if result.Error != nil {
+		return result.Error
+	}
+
+	if result.RowsAffected == 0 {
+		return gorm.ErrRecordNotFound
+	}
+
+	return nil
 }
