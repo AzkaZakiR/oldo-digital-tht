@@ -17,7 +17,15 @@ func OpenConnection() (*gorm.DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error loading .env file: %w", err)
 	}
-	dsn := "host=localhost user=postgres password=" + os.Getenv("DB_PASSWORD") + " dbname=oldo_digital port=5432 sslmode=disable TimeZone=Asia/Jakarta"
+	dsn := fmt.Sprintf(
+	"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=%s",
+		os.Getenv("DB_HOST"),
+		os.Getenv("DB_USER"),
+		os.Getenv("DB_PASSWORD"),
+		os.Getenv("DB_NAME"),
+		os.Getenv("DB_PORT"),
+		os.Getenv("DB_TIMEZONE"),
+	)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to database: %w", err)

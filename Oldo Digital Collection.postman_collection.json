@@ -1,0 +1,925 @@
+{
+  "info": {
+    "_postman_id": "a3d8acf9-f76e-49ee-983b-5b21fff20ad2",
+    "name": "Oldo Digital Collection",
+    "description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15073410"
+  },
+  "item": [
+    {
+      "name": "Users API",
+      "item": [
+        {
+          "name": "Test ",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 04:08:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "5054"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n            \"UpdatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Laufey\",\n            \"email\": \"Laufey@gmail.com\",\n            \"phoneNumber\": \"08124215123\",\n            \"password\": \"$2a$14$kZzYcm2mZ6u0sGmhFfocE.482yHqQtM21Wqi76QzBRJl66O3n3hIq\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2026-04-28T21:50:01.693206+07:00\",\n            \"UpdatedAt\": \"2026-04-28T23:23:57.918914+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"fuko main\",\n            \"email\": \"iniemail@g.com\",\n            \"phoneNumber\": \"0960231\",\n            \"password\": \"$2a$14$VK1cRHCj7u.M9BgmNIXHbOrWEm5E4G0CyhzAQvr.6lj0g.o2BZr6q\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 4,\n            \"CreatedAt\": \"2026-04-29T00:14:30.805947+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:14:30.805947+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Frank\",\n            \"email\": \"frank@gmail.com\",\n            \"phoneNumber\": \"08124215123\",\n            \"password\": \"bigfrank\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 15,\n            \"CreatedAt\": \"2026-04-29T00:27:27.235741+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:27:27.235741+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Frank\",\n            \"email\": \"fawffawwaaaaa@gmail.com\",\n            \"phoneNumber\": \"08124215123\",\n            \"password\": \"bigfrank\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 16,\n            \"CreatedAt\": \"2026-04-29T00:27:32.376253+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:27:32.376253+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Frank\",\n            \"email\": \"fawffawwaaaaa@gfawmail.com\",\n            \"phoneNumber\": \"08124215123\",\n            \"password\": \"bigfrank\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 19,\n            \"CreatedAt\": \"2026-04-29T00:35:09.04328+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:35:09.04328+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfw\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 20,\n            \"CreatedAt\": \"2026-04-29T00:35:33.043563+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:35:33.043563+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfwa\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 21,\n            \"CreatedAt\": \"2026-04-29T00:41:11.339492+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:41:11.339492+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfwaa\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 22,\n            \"CreatedAt\": \"2026-04-29T00:41:51.777321+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:41:51.777321+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfwaadw\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 23,\n            \"CreatedAt\": \"2026-04-29T00:42:27.630271+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:42:27.630271+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfwaaswdw\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 25,\n            \"CreatedAt\": \"2026-04-29T00:43:43.057753+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:43:43.057753+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"\",\n            \"email\": \"fwfwaaswswswdw\",\n            \"phoneNumber\": \"\",\n            \"password\": \"\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 26,\n            \"CreatedAt\": \"2026-04-29T07:14:21.128979+07:00\",\n            \"UpdatedAt\": \"2026-04-29T07:14:21.128979+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Jacckie\",\n            \"email\": \"jack@email.id\",\n            \"phoneNumber\": \"081234567\",\n            \"password\": \"$2a$14$XASwAOq7ZHq.bIH4x2vATuTrug1Q9nq3EdRkZBOnzclmqx8xGnbwW\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 17,\n            \"CreatedAt\": \"2026-04-29T00:30:58.442132+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:30:31.193022+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Ini edit\",\n            \"email\": \"iniedit@email.conmg\",\n            \"phoneNumber\": \"5231662312\",\n            \"password\": \"$2a$14$kYSMVpC.WZTx3kBW7jgYJelV3d24PfO.e362Z7xwxzJEbqYcFUJR6\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 27,\n            \"CreatedAt\": \"2026-04-29T07:29:41.633982+07:00\",\n            \"UpdatedAt\": \"2026-04-29T07:29:41.633982+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"mar@email.id\",\n            \"phoneNumber\": \"512521\",\n            \"password\": \"$2a$14$gyENInpGHFmO7N3C9CYMQOMcTdAEQJdrtRh1DMwQOeP7GoaKJzlV6\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 28,\n            \"CreatedAt\": \"2026-04-29T07:30:30.655577+07:00\",\n            \"UpdatedAt\": \"2026-04-29T07:30:30.655577+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"mar12@email.id\",\n            \"phoneNumber\": \"512521\",\n            \"password\": \"$2a$14$xfafJWwsEdFBr7SmltKFz.JCI98PMaLqqZzsfR2S0IqwG6BouFfoe\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 29,\n            \"CreatedAt\": \"2026-04-29T07:31:33.817265+07:00\",\n            \"UpdatedAt\": \"2026-04-29T07:31:33.817265+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"mar123@email.id\",\n            \"phoneNumber\": \"512521\",\n            \"password\": \"$2a$14$fACmukp1eggC1NqkRlaunOnUusuSH/3mHUJ63LknJgqiS3VZm7TnW\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 31,\n            \"CreatedAt\": \"2026-04-29T09:30:19.957871+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:30:19.957871+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"mar12345@email.id\",\n            \"phoneNumber\": \"512521\",\n            \"password\": \"$2a$14$nytjPWB6yJrLi2Bi6yX0EeSBs44GfJzIP4NgksLBcm0dcRvQ/kQWi\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 33,\n            \"CreatedAt\": \"2026-04-29T09:56:45.553561+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:56:45.553561+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"marz123@email.id\",\n            \"phoneNumber\": \"512521\",\n            \"password\": \"$2a$14$6ZRQi4JLabwucZbHG1Wok.H5.4xnCnbUi3UebUeu5x20NbKaAsqq2\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 36,\n            \"CreatedAt\": \"2026-04-29T10:20:25.982118+07:00\",\n            \"UpdatedAt\": \"2026-04-29T10:20:25.982118+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"marz1235@email.id\",\n            \"phoneNumber\": \"5151\",\n            \"password\": \"$2a$14$uonPCKxVJK/ANhYTWusLfe0r3uvVO.bCg5Wwv6HZspsJZYwsAsx.a\",\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 44,\n            \"CreatedAt\": \"2026-04-29T11:08:35.748053+07:00\",\n            \"UpdatedAt\": \"2026-04-29T11:08:35.748053+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"mar\",\n            \"email\": \"marz1235521@email.id\",\n            \"phoneNumber\": \"521521\",\n            \"password\": \"$2a$14$bFtDnfe9EIfTp7JUmJr8X..3L3tVrzjrNwkbIU6FhEuBzP5.2KzUW\",\n            \"Transactions\": null\n        }\n    ],\n    \"message\": \"users fetched\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User By Id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User By Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/users/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 04:08:54 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "337"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 3,\n        \"CreatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n        \"UpdatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Laufey\",\n        \"email\": \"Laufey@gmail.com\",\n        \"phoneNumber\": \"08124215123\",\n        \"password\": \"$2a$14$kZzYcm2mZ6u0sGmhFfocE.482yHqQtM21Wqi76QzBRJl66O3n3hIq\",\n        \"Transactions\": null\n    },\n    \"message\": \"user fetched\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"mar\",\r\n    \"email\": \"mar12345@email.id\",\r\n    \"phoneNumber\": \"512521\",\r\n    \"password\": \"admin123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"azka\",\r\n    \"email\": \"azka@azkazk11.my.id\",\r\n    \"phoneNumber\": \"521521\",\r\n    \"password\": \"inirahasiakitasaja\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 04:09:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 45,\n        \"CreatedAt\": \"2026-04-29T11:09:26.7979736+07:00\",\n        \"UpdatedAt\": \"2026-04-29T11:09:26.7979736+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"azka\",\n        \"email\": \"azka@azkazk11.my.id\",\n        \"phoneNumber\": \"521521\",\n        \"password\": \"$2a$14$M4YSlTMRMSGAPtMKZw2TZuzx.UpOjoGhXrTjR1f7bNpflAGwqTsre\",\n        \"Transactions\": null\n    },\n    \"message\": \"user created\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"password\": \"123456789\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "17"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Edit User",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"password\": \"123456789\"\r\n    }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/users/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "17"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 04:09:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "342"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 17,\n        \"CreatedAt\": \"2026-04-29T00:30:58.442132+07:00\",\n        \"UpdatedAt\": \"2026-04-29T09:30:31.193022+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Ini edit\",\n        \"email\": \"iniedit@email.conmg\",\n        \"phoneNumber\": \"5231662312\",\n        \"password\": \"$2a$14$4t.ZAhXofzNiJW73ckCrYeYujegTUN2vKOghD3Z/.dy7fWQpcI3ai\",\n        \"Transactions\": null\n    },\n    \"message\": \"user updated\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Data Plan API (Paket Data)",
+      "item": [
+        {
+          "name": "Get All Data Plan",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/dataplan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dataplan"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Data Plan",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/dataplan",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "dataplan"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:31:08 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "976"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2026-04-29T09:08:03.092694+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:10:26.980374+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Paket 1 GB sehari\",\n            \"price\": 10000,\n            \"quota\": 1,\n            \"active_period\": 10,\n            \"is_active\": true,\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Paket 12 GB sehari\",\n            \"price\": 120000,\n            \"quota\": 12,\n            \"active_period\": 29,\n            \"is_active\": true,\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2026-04-29T09:08:15.033681+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:08:15.033681+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Paket 12 GB sehari\",\n            \"price\": 120000,\n            \"quota\": 12,\n            \"active_period\": 29,\n            \"is_active\": true,\n            \"Transactions\": null\n        },\n        {\n            \"ID\": 4,\n            \"CreatedAt\": \"2026-04-29T09:08:25.766222+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:08:25.766222+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Paket 5 GB sehari\",\n            \"price\": 50000,\n            \"quota\": 5,\n            \"active_period\": 29,\n            \"is_active\": true,\n            \"Transactions\": null\n        }\n    ],\n    \"message\": \"data plans retrieved\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Data Plan By Id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/dataplan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dataplan",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Data Plan By Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/dataplan/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "dataplan",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:08:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "289"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 2,\n        \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n        \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Paket 12 GB sehari\",\n        \"price\": 120000,\n        \"quota\": 12,\n        \"active_period\": 29,\n        \"is_active\": true,\n        \"Transactions\": null\n    },\n    \"message\": \"data plan retrieved\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Data Plan",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Paket 50 GB sehari\",\r\n    \"price\": 50000,\r\n    \"quota\": 50,\r\n    \"active_period\": 30,\r\n    \"is_active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/dataplan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dataplan"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Data Plan",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Paket 50 GB sehari\",\r\n    \"price\": 50000,\r\n    \"quota\": 50,\r\n    \"active_period\": 30,\r\n    \"is_active\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/dataplan",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "dataplan"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:32:11 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "288"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 5,\n        \"CreatedAt\": \"2026-04-29T09:32:12.2522369+07:00\",\n        \"UpdatedAt\": \"2026-04-29T09:32:12.2522369+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Paket 50 GB sehari\",\n        \"price\": 50000,\n        \"quota\": 50,\n        \"active_period\": 30,\n        \"is_active\": true,\n        \"Transactions\": null\n    },\n    \"message\": \"data plan created\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Data Plan",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    // \"name\": \"Paket 1 GB sehari\",\r\n    // \"price\": 10000,\r\n    // \"quota\": 1,\r\n    \"active_period\": 10,\r\n    \"is_active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/dataplan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dataplan",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Data Plan",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Paket 111 GB sehari\",\r\n    \"price\": 111000,\r\n    \"quota\": 111,\r\n    \"active_period\": 29,\r\n    \"is_active\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/dataplan/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "dataplan",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:35:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "289"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2026-04-29T09:08:03.092694+07:00\",\n        \"UpdatedAt\": \"2026-04-29T09:10:26.980374+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Paket 111 GB sehari\",\n        \"price\": 111000,\n        \"quota\": 111,\n        \"active_period\": 29,\n        \"is_active\": true,\n        \"Transactions\": null\n    },\n    \"message\": \"data plan updated\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transactions API",
+      "item": [
+        {
+          "name": "Get Transactions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/transactions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "transactions"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": [
+            {
+              "name": "Get data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/transactions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "transactions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:46:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1341"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2026-04-29T09:36:56.920714+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:36:56.920714+07:00\",\n            \"DeletedAt\": null,\n            \"user_id\": 1,\n            \"data_plan_id\": 2,\n            \"price\": 120000,\n            \"User\": {\n                \"ID\": 0,\n                \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n                \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n                \"DeletedAt\": null,\n                \"name\": \"\",\n                \"email\": \"\",\n                \"phoneNumber\": \"\",\n                \"password\": \"\",\n                \"Transactions\": null\n            },\n            \"DataPlan\": {\n                \"ID\": 2,\n                \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Paket 12 GB sehari\",\n                \"price\": 120000,\n                \"quota\": 12,\n                \"active_period\": 29,\n                \"is_active\": true,\n                \"Transactions\": null\n            }\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2026-04-29T09:45:36.930499+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:45:36.930499+07:00\",\n            \"DeletedAt\": null,\n            \"user_id\": 3,\n            \"data_plan_id\": 2,\n            \"price\": 120000,\n            \"User\": {\n                \"ID\": 3,\n                \"CreatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n                \"UpdatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Laufey\",\n                \"email\": \"Laufey@gmail.com\",\n                \"phoneNumber\": \"08124215123\",\n                \"password\": \"$2a$14$kZzYcm2mZ6u0sGmhFfocE.482yHqQtM21Wqi76QzBRJl66O3n3hIq\",\n                \"Transactions\": null\n            },\n            \"DataPlan\": {\n                \"ID\": 2,\n                \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Paket 12 GB sehari\",\n                \"price\": 120000,\n                \"quota\": 12,\n                \"active_period\": 29,\n                \"is_active\": true,\n                \"Transactions\": null\n            }\n        }\n    ],\n    \"message\": \"transactions retrieved\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Transactions By Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/transactions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "transactions"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": [
+            {
+              "name": "Get data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/transactions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "transactions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:46:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1341"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2026-04-29T09:36:56.920714+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:36:56.920714+07:00\",\n            \"DeletedAt\": null,\n            \"user_id\": 1,\n            \"data_plan_id\": 2,\n            \"price\": 120000,\n            \"User\": {\n                \"ID\": 0,\n                \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n                \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n                \"DeletedAt\": null,\n                \"name\": \"\",\n                \"email\": \"\",\n                \"phoneNumber\": \"\",\n                \"password\": \"\",\n                \"Transactions\": null\n            },\n            \"DataPlan\": {\n                \"ID\": 2,\n                \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Paket 12 GB sehari\",\n                \"price\": 120000,\n                \"quota\": 12,\n                \"active_period\": 29,\n                \"is_active\": true,\n                \"Transactions\": null\n            }\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2026-04-29T09:45:36.930499+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:45:36.930499+07:00\",\n            \"DeletedAt\": null,\n            \"user_id\": 3,\n            \"data_plan_id\": 2,\n            \"price\": 120000,\n            \"User\": {\n                \"ID\": 3,\n                \"CreatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n                \"UpdatedAt\": \"2026-04-28T22:02:48.723556+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Laufey\",\n                \"email\": \"Laufey@gmail.com\",\n                \"phoneNumber\": \"08124215123\",\n                \"password\": \"$2a$14$kZzYcm2mZ6u0sGmhFfocE.482yHqQtM21Wqi76QzBRJl66O3n3hIq\",\n                \"Transactions\": null\n            },\n            \"DataPlan\": {\n                \"ID\": 2,\n                \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n                \"DeletedAt\": null,\n                \"name\": \"Paket 12 GB sehari\",\n                \"price\": 120000,\n                \"quota\": 12,\n                \"active_period\": 29,\n                \"is_active\": true,\n                \"Transactions\": null\n            }\n        }\n    ],\n    \"message\": \"transactions retrieved\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Transactions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t \"user_id\": 4,\n  \"data_plan_id\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/transactions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "transactions"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": [
+            {
+              "name": "Post data",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t \"user_id\": 4,\n  \"data_plan_id\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/transactions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "transactions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Wed, 29 Apr 2026 02:56:02 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "702"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"ID\": 9,\n        \"CreatedAt\": \"2026-04-29T09:56:02.464654+07:00\",\n        \"UpdatedAt\": \"2026-04-29T09:56:02.464654+07:00\",\n        \"DeletedAt\": null,\n        \"user_id\": 4,\n        \"data_plan_id\": 2,\n        \"price\": 120000,\n        \"User\": {\n            \"ID\": 4,\n            \"CreatedAt\": \"2026-04-29T00:14:30.805947+07:00\",\n            \"UpdatedAt\": \"2026-04-29T00:14:30.805947+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Frank\",\n            \"email\": \"frank@gmail.com\",\n            \"phoneNumber\": \"08124215123\",\n            \"password\": \"bigfrank\",\n            \"Transactions\": null\n        },\n        \"DataPlan\": {\n            \"ID\": 2,\n            \"CreatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n            \"UpdatedAt\": \"2026-04-29T09:08:11.694861+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"Paket 12 GB sehari\",\n            \"price\": 120000,\n            \"quota\": 12,\n            \"active_period\": 29,\n            \"is_active\": true,\n            \"Transactions\": null\n        }\n    },\n    \"message\": \"transaction created\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "id",
+      "value": "1"
+    },
+    {
+      "key": "base_url",
+      "value": "https://template.postman-echo.com"
+    }
+  ]
+}
