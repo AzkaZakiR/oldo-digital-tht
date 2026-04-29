@@ -9,7 +9,6 @@ import (
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/repository"
 	"github.com/AzkaZakiR/oldo-digital-tht/internal/service"
 	"github.com/gofiber/fiber/v3"
-	"golang.org/x/crypto/bcrypt"
 )
 type Response struct {
 	Message string `json:"message"`
@@ -31,11 +30,15 @@ func main(){
 	dataPlanRepo := repository.NewDataPlanRepository(db)
 	dataPlanSvc := service.NewDataPlanService(dataPlanRepo)
 	dataPlanHandler := handler.NewDataPlanHandler(dataPlanSvc)
+	transactionRepo := repository.NewTransactionRepository(db)
+	transactionSvc := service.NewTransactionService(transactionRepo, dataPlanRepo, userRepo)
+	transactionHandler := handler.NewTransactionHandler(transactionSvc)
 
 	app := fiber.New()
 
 	userApi := app.Group("/api/users")
 	dataPlanApi := app.Group("/api/dataplan")
+	transactionApi := app.Group("/api/transactions")
 
 	userApi.Get("", userHandler.GetAll)
 	userApi.Get("/:id", userHandler.GetByID)
@@ -49,6 +52,10 @@ func main(){
 	dataPlanApi.Patch("/:id", dataPlanHandler.Update)
 	dataPlanApi.Delete("/:id", dataPlanHandler.Delete)
 
+
+	transactionApi.Get("", transactionHandler.GetAll)
+	transactionApi.Get("/:id", transactionHandler.GetByID)
+	transactionApi.Post("", transactionHandler.Create)
 
 	app.Get("/", func (c fiber.Ctx) error  {
 		res := Response{
@@ -77,9 +84,4 @@ func main(){
 	})
 
 	app.Listen(":3000")
-}
-
-func hashPassword(password string) (string, error) {
-	bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
-	return string(bytes), err
 }
