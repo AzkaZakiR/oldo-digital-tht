@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	models "github.com/AzkaZakiR/oldo-digital-tht/internal/models"
 	"github.com/joho/godotenv"
@@ -13,26 +14,33 @@ import (
 
 
 func OpenConnection() (*gorm.DB, error) {
-	err := godotenv.Load()
-	if err != nil {
-		return nil, fmt.Errorf("error loading .env file: %w", err)
-	}
-	dsn := fmt.Sprintf(
-	"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=%s",
-		os.Getenv("DB_HOST"),
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_NAME"),
-		os.Getenv("DB_PORT"),
-		os.Getenv("DB_TIMEZONE"),
-	)
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		return nil, fmt.Errorf("failed to connect to database: %w", err)
-	}
-	return db, nil
-}
+	_ = godotenv.Load()
 
+	dsn := fmt.Sprintf(
+		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=%s",
+		getEnv("DB_HOST", "localhost"),
+		getEnv("DB_USER", "postgres"),
+		getEnv("DB_PASSWORD", "postgres"),
+		getEnv("DB_NAME", "oldo_db"),
+		getEnv("DB_PORT", "5432"),
+		getEnv("DB_TIMEZONE", "UTC"),
+	)
+
+	var db *gorm.DB
+	var err error
+
+	for i := 0; i < 10; i++ {
+		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
+		if err == nil {
+			log.Println("✅ Connected to database")
+			return db, nil
+		}
+		log.Println("⏳ Waiting for database...")
+		time.Sleep(2 * time.Second)
+	}
+
+	return nil, fmt.Errorf("failed to connect after retries: %w", err)
+}
 func Migrate(db *gorm.DB) error{
 	err := db.AutoMigrate(
 		&models.User{},
@@ -40,9 +48,16 @@ func Migrate(db *gorm.DB) error{
 		&models.Transaction{},
 	)
 	if err != nil{
-		log.Fatal("Migration failed", err)
+		return fmt.Errorf("migration failed: %w", err)
 	}
 
 	log.Println("Migration successfull")
 	return nil
+}
+
+func getEnv(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
 }
